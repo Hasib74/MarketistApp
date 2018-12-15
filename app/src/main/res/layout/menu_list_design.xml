@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:weightSum="5"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="2"
+
+                android:layout_gravity="center"
+                android:id="@+id/menu_name"
+                android:text="menu_name"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+
+                android:layout_gravity="center"
+                android:id="@+id/quntity"
+                android:layout_marginLeft="25dp"
+                android:text="1 kg"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:inputType="phone"
+                android:digits="0123456789."
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/editprice"
+                android:hint="price"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:visibility="gone"
+                android:gravity="center"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/priceTxt"
+                android:text="Price"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:src="@drawable/right"
+                android:id="@+id/confrom"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <ImageView
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:src="@drawable/confrom"
+                android:id="@+id/save_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
