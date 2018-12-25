@@ -1,6 +1,7 @@
 package com.example.dcl.dailymarketlist.Retrofit;
 
 import com.example.dcl.dailymarketlist.Model.Check;
+import com.example.dcl.dailymarketlist.Model.ReceivedData;
 import com.example.dcl.dailymarketlist.Model.SendTable;
 import com.example.dcl.dailymarketlist.Model.ShowSendBazarListHelper;
 import com.example.dcl.dailymarketlist.Model.check1;
@@ -36,22 +37,30 @@ public interface DailyMarketApi {
                                           @Field("confromstatus") String confrom_status);
     @FormUrlEncoded
     @POST("inseritothrsendertable.php")
-    Call<check1> insertIntoTheSenderTable  (@Field("mynumber") String number,
-                                            @Field("receiverNumber") String sender_number,
-                                            @Field("dateandtime") String date_and_time,
-                                            @Field("itemname") String item_name,
-                                            @Field("quantity") String quantity,
-                                            @Field("price") String price,
-                                            @Field("confromstatus") String confrom_status);
+    Call<String> insertIntoTheSenderTable   (@Field("mynumber") String number,
+                                             @Field("receiverNumber") String sender_number,
+                                             @Field("dateandtime") String date_and_time,
+                                             @Field("itemname") String item_name,
+                                             @Field("quantity") String quantity,
+                                             @Field("price") String price,
+                                             @Field("confromstatus") String confrom_status);
 
     @FormUrlEncoded
     @POST("readdatafromsendtable.php")
-    Call<List<SendTable>> readDataFromSendTable  (@Field("mynumber") String number);
+    Call<List<SendTable>>readDataFromSendTable(@Field("mynumber") String number);
 
 
     @FormUrlEncoded
     @POST("readShowSendBazarList.php")
     Call<List<ShowSendBazarListHelper>> readShowSendBazarList  (@Field("number") String number, @Field("dateandtime") String dateAndtime);
+
+    @FormUrlEncoded
+    @POST("readAllDataFromReceivedTable.php")
+    Call<List<ReceivedData>>readDataFromReceivedTable(@Field("mynumber") String number);
+
+    @FormUrlEncoded
+    @POST("readShowReceivedBazarList.php")
+    Call<List<ShowSendBazarListHelper>> readShowReceivedBazarList  (@Field("number") String number, @Field("dateandtime") String dateAndtime);
 
 
 

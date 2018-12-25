@@ -140,7 +140,7 @@ public class CodeVerification extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Common.phone_number=number;
-                            User user =new User(number.substring(2),getIntent().getStringExtra("name"),getIntent().getStringExtra("password"));
+                            User user =new User(number,getIntent().getStringExtra("name"),getIntent().getStringExtra("password"));
                            FirebaseDatabase.getInstance().getReference("User").child(number.substring(2)).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                @Override
                                public void onSuccess(Void aVoid) {
@@ -148,7 +148,7 @@ public class CodeVerification extends AppCompatActivity {
                                }
                            });
 
-                           mServer.create_table(getIntent().getStringExtra("number").substring(2)).enqueue(new Callback<Check>() {
+                           mServer.create_table(number).enqueue(new Callback<Check>() {
                                @Override
                                public void onResponse(Call<Check> call, Response<Check> response) {
                                   Check check=response.body();
@@ -168,7 +168,7 @@ public class CodeVerification extends AppCompatActivity {
                            });
 
                             Intent intent=new Intent(CodeVerification.this,Home.class);
-                            intent.putExtra("number",getIntent().getStringExtra("number").substring(2));
+                            intent.putExtra("number",getIntent().getStringExtra("number"));
                             startActivity(intent);
 
                         } else {

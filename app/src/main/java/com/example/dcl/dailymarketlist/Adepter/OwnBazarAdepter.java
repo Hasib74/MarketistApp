@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,8 +62,10 @@ public class OwnBazarAdepter extends RecyclerView.Adapter<OwnBazarAdepter.OwnBaz
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
                 List<MemberNumber> member_list= Common.read_all_members();
-                DialogMembersAdepter dialogMembersAdepter=new DialogMembersAdepter(context,member_list,ownBazarViewHolder.date.getText().toString(),ownBazarViewHolder.time.getText().toString(),ownBazarList.get(i).getId());
 
+
+
+                DialogMembersAdepter dialogMembersAdepter=new DialogMembersAdepter(context,member_list,ownBazarViewHolder.date.getText().toString(),ownBazarViewHolder.time.getText().toString(),ownBazarList.get(i).getId());
                 recyclerView.setAdapter(dialogMembersAdepter);
 
                 alrt.show();

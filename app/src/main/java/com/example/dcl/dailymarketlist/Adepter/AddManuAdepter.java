@@ -198,7 +198,8 @@ public class AddManuAdepter extends RecyclerView.Adapter<AddManuAdepter.AddManuV
             addManuViewHolder.add_manu.setCursorVisible(true);
             addManuViewHolder.add_quantity.setCursorVisible(true);
         }
-        else {
+        else
+         {
             addManuViewHolder.add_new_item.setVisibility(View.GONE);
             addManuViewHolder.add_manu.setCursorVisible(false);
             addManuViewHolder.add_quantity.setCursorVisible(false);

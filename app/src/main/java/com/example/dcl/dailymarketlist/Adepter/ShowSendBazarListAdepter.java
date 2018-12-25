@@ -8,8 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.dcl.dailymarketlist.Model.ReceivedData;
 import com.example.dcl.dailymarketlist.Model.ShowSendBazarListHelper;
 import com.example.dcl.dailymarketlist.R;
+import com.example.dcl.dailymarketlist.ShowSendBazarList;
 
 import java.util.List;
 
@@ -21,6 +23,8 @@ public class ShowSendBazarListAdepter extends RecyclerView.Adapter<ShowSendBazar
         this.context = context;
         this.showSendBazarListList = showSendBazarListList;
     }
+
+
 
     @NonNull
     @Override

@@ -22,8 +22,8 @@ public class List  extends Fragment{
     TabLayout tabLayout;
     ViewPager  viewPager;
     ListViewPagerAdepter listViewPagerAdepter;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    //SharedPreferences sharedPreferences;
+  //  SharedPreferences.Editor editor;
 
     int index;
 
@@ -52,9 +52,11 @@ public class List  extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          View v=inflater.inflate(R.layout.list_fragment,null);
+/*
 
          sharedPreferences=getActivity().getSharedPreferences("SP1", Context.MODE_PRIVATE);
          editor=sharedPreferences.edit();
+*/
 
 
          readBundle(getArguments());
@@ -62,15 +64,15 @@ public class List  extends Fragment{
 
          tabLayout=v.findViewById(R.id.list_tab_layout);
          viewPager=v.findViewById(R.id.list_view_pager);
-         Toast.makeText(getActivity(), "Index :"+index, Toast.LENGTH_SHORT).show();
+       //  Toast.makeText(getActivity(), "Index :"+index, Toast.LENGTH_SHORT).show();
 
          setUpViewPager();
 
-        if (sharedPreferences!=null){
+        /*if (sharedPreferences!=null){
             viewPager.setCurrentItem(sharedPreferences.getInt("position",0));
         }else {
             viewPager.setCurrentItem(0);
-        }
+        }*/
 
 
         tabLayout.setupWithViewPager(viewPager);
@@ -80,10 +82,23 @@ public class List  extends Fragment{
     private void setUpViewPager() {
 
 
-            Toast.makeText(getActivity(), "I am alive", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getActivity(), "I am alive", Toast.LENGTH_SHORT).show();
             listViewPagerAdepter=new ListViewPagerAdepter(getContext(),getFragmentManager());
             viewPager.setAdapter(listViewPagerAdepter);
-            viewPager.setCurrentItem(0);
+
+            if (index==2){
+                viewPager.setCurrentItem(1);
+                index=0;
+            }else if(index==0) {
+                viewPager.setCurrentItem(0);
+                index=0;
+            }else {
+                viewPager.setCurrentItem(0);
+            }
+
+
+
+
 
 
 
@@ -92,9 +107,9 @@ public class List  extends Fragment{
     @Override
     public void onDestroy() {
         super.onDestroy();
-        editor.clear();
+       /* editor.clear();
         editor.putInt("position",viewPager.getCurrentItem());
         editor.commit();
-
+*/
     }
 }

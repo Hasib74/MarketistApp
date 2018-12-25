@@ -25,10 +25,6 @@ public class Members extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members);
-
-        Log.i("USER_LIST",Common.userList.toString());
-        Log.i("ALL_CONTRACT_LIST",Common.contract_number_list.toString());
-
         recyclerView=(RecyclerView)findViewById(R.id.member_recycular);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

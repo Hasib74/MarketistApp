@@ -106,11 +106,11 @@ public class Home extends AppCompatActivity
             Log.i("COMPLETE_MYSQL",completeMySqlList.toString());
 
         }else {
-            Toast.makeText(this, "INTERNET NOT AVILABLE", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "INTERNET NOT AVILABLE", Toast.LENGTH_SHORT).show();
         }
 
 
-        Toast.makeText(this, "" + Common.getTime(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "" + Common.getTime(), Toast.LENGTH_SHORT).show();
 
         TextView change_image = findViewById(R.id.change_image);
         Button btn_one = findViewById(R.id.one);
@@ -131,7 +131,7 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, AddMarketList.class));
-                Toast.makeText(getApplicationContext(), "This is own_complete_list", Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(), "This is own_complete_list", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -147,7 +147,7 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 marketListDB.restart();
-                Toast.makeText(Home.this, "Reset Successfully", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(Home.this, "Reset Successfully", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -181,6 +181,15 @@ public class Home extends AppCompatActivity
 
         update_tokens();
 
+        //Log.i("USER_LIST",Common.userList.toString());
+        for (int i=0;i<phone_number_list.size();i++){
+            Log.i("ALL_CONTRACT_LIST",phone_number_list.get(i).toString());
+        }
+
+
+
+
+
 
     }
 
@@ -204,6 +213,10 @@ public class Home extends AppCompatActivity
                     Log.i("USER_INFO",user.getNumber());
                     user_list.add(user);
                     Common.userList=user_list;
+
+                    
+
+
                 }
 
 
@@ -213,7 +226,7 @@ public class Home extends AppCompatActivity
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(Home.this, "Error " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(Home.this, "Error " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -240,7 +253,7 @@ public class Home extends AppCompatActivity
                    }
 
                }else {
-                   Toast.makeText(this, "Cursor is null", Toast.LENGTH_SHORT).show();
+             //      Toast.makeText(this, "Cursor is null", Toast.LENGTH_SHORT).show();
                }
 
 
@@ -264,7 +277,7 @@ public class Home extends AppCompatActivity
 
                 @Override
                 public void onFailure(Call<check1> call, Throwable t) {
-                    Toast.makeText(Home.this, "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(Home.this, "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -289,7 +302,7 @@ public class Home extends AppCompatActivity
                 Log.i("completed_list",completedList.toString());
             }
         }else {
-            Toast.makeText(this, "cursor is false", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "cursor is false", Toast.LENGTH_SHORT).show();
             Log.i("error",completedList.toString());
 
         }
@@ -416,7 +429,7 @@ public class Home extends AppCompatActivity
             }
         }
         cursor.close();
-        Toast.makeText(this, "" + phone_number_list, Toast.LENGTH_SHORT).show();
+
     }
 
 

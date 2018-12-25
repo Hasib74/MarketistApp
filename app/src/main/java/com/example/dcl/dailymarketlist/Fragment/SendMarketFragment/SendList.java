@@ -15,6 +15,7 @@ import com.example.dcl.dailymarketlist.Model.SendTable;
 import com.example.dcl.dailymarketlist.R;
 import com.example.dcl.dailymarketlist.Retrofit.DailyMarketApi;
 import com.example.dcl.dailymarketlist.Utils.Common;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class SendList extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         //read_data_from_send_table();
 
-        dailyMarketApi.readDataFromSendTable("01727123374").enqueue(new Callback<List<SendTable>>() {
+        dailyMarketApi.readDataFromSendTable(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber()).enqueue(new Callback<List<SendTable>>() {
             @Override
             public void onResponse(Call<List<SendTable>> call, Response<List<SendTable>> response) {
 

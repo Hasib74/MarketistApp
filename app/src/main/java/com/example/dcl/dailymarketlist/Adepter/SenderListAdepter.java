@@ -14,6 +14,7 @@ import com.example.dcl.dailymarketlist.R;
 import com.example.dcl.dailymarketlist.Retrofit.DailyMarketApi;
 import com.example.dcl.dailymarketlist.Utils.Common;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SenderListAdepter  extends RecyclerView.Adapter<SenderListAdepter.SenderListViewHlder> {
@@ -22,12 +23,14 @@ public class SenderListAdepter  extends RecyclerView.Adapter<SenderListAdepter.S
     DailyMarketApi dailyMarketApi;
 
 
-    public SenderListAdepter(Context context, List<SendTable> SendTableList) {
+    public SenderListAdepter(Context context, List<SendTable> SendTableList1) {
         this.context = context;
 
+        List<SendTable> SendTableList=SendTableList1;
+        List<SendTable> tempList=new ArrayList<>();
 
-        for (int i=0;i<SendTableList.size();i++){
-            for (int j=0;j<SendTableList.size();j++){
+        for (int i=0;i<SendTableList.size()-1;i++){
+            for (int j=1;j<SendTableList.size();j++){
                 if (SendTableList.get(i).getDateandtime().equals(SendTableList.get(j).getDateandtime())){
                     SendTableList.remove(j);
                 }
@@ -68,6 +71,7 @@ public class SenderListAdepter  extends RecyclerView.Adapter<SenderListAdepter.S
            @Override
            public void onClick(View v) {
                Intent in=new Intent(context, com.example.dcl.dailymarketlist.ShowSendBazarList.class);
+               in.putExtra("class_path","send");
                in.putExtra("dateandtime",sendTableList.get(i).getDateandtime());
                context.startActivity(in);
            }

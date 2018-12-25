@@ -3,6 +3,7 @@ package com.example.dcl.dailymarketlist.Utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 import com.example.dcl.dailymarketlist.Interface.FCMservice;
 import com.example.dcl.dailymarketlist.Model.CompleteMarket;
@@ -25,7 +26,7 @@ public class Common {
         this.context = context;
     }
 
-    public static final  String BASE_URL="http://192.168.0.109/DailyMarket/";
+    public static final  String BASE_URL="http://192.168.1.101/DailyMarket/";
     public  static  final String fcmURL="https://fcm.googleapis.com/";
     public static FCMservice getFCMService()
     {
@@ -69,10 +70,10 @@ public class Common {
          List<MemberNumber> members_info_list=new ArrayList<>();
         for (int i = 0; i <userList.size(); i++) {
             for (int j = 0; j <contract_number_list.size(); j++) {
-                String registerNumber = userList.get(i).getNumber();
+                String registerNumber = userList.get(i).getNumber().substring(2);
                 if (registerNumber.equals(contract_number_list.get(j))) {
-                    MemberNumber member=new MemberNumber(contract_number_list.get(j));
-                    members_info_list.add(member);
+                     MemberNumber member=new MemberNumber(contract_number_list.get(j));
+                     members_info_list.add(member);
                 }
             }
         }
