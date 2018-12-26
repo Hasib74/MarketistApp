@@ -22,26 +22,35 @@ import com.google.firebase.messaging.RemoteMessage;
 public class FirebaseMessageing extends FirebaseMessagingService {
 
     RemoteViews expandedView;
-    RemoteViews collapsedView;
+    RemoteViews contentView;
+   // RemoteViews collapsedView;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-         expandedView = new RemoteViews(getPackageName(), R.layout.notification_layout_design);
-         collapsedView = new RemoteViews(getPackageName(), R.layout.notification_expanded);
+        /* expandedView = new RemoteViews(getPackageName(), R.layout.notification_layout_design);
+         //collapsedView = new RemoteViews(getPackageName(), R.layout.notification_expanded);
 
         expandedView.setImageViewResource(R.id.big_icon, R.drawable.android);
         expandedView.setTextViewText(R.id.timestamp, DateUtils.formatDateTime(this, System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME));
 
-        collapsedView.setImageViewResource(R.id.big_icon, R.drawable.ic_audiotrack_dark);
+       *//* collapsedView.setImageViewResource(R.id.big_icon, R.drawable.ic_audiotrack_dark);
         collapsedView.setTextViewText(R.id.timestamp, DateUtils.formatDateTime(this, System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME));
-
+*//*
         Intent leftIntent = new Intent(this, Home.class);
         leftIntent.setAction("left");
-        expandedView.setOnClickPendingIntent(R.id.left_button, PendingIntent.getService(this, 0, leftIntent, PendingIntent.FLAG_UPDATE_CURRENT));
 
-       // expandedView.setTextViewText(R.id.notification_message, mEditText.getText());
+        //expandedView.setOnClickPendingIntent(R.id.left_button, PendingIntent.getService(this, 0, leftIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+
+       // expandedView.setTextViewText(R.id.notification_message, mEditText.getText());*/
+
+         contentView = new RemoteViews(getPackageName(), R.layout.notification_test);
+        contentView.setImageViewResource(R.id.image, R.drawable.android);
+        contentView.setTextViewText(R.id.title, "Custom notification");
+        contentView.setTextViewText(R.id.text, "This is a custom layout");
+     //   notification.contentView = contentView;
+
 
 
         if (remoteMessage.getNotification().getTitle().equals("New  Request")){
@@ -64,9 +73,11 @@ public class FirebaseMessageing extends FirebaseMessagingService {
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.mipmap.ic_launcher)
               //  .setCustomContentView(collapsedView)
-                .setCustomBigContentView(expandedView)
+                .setContent(contentView)
+
+              //  .setCustomBigContentView(expandedView)
                 // setting style to DecoratedCustomViewStyle() is necessary for custom views to display
-                .setStyle(new Notification.DecoratedCustomViewStyle())
+             //   .setStyle(new Notification.DecoratedCustomViewStyle())
                 .build();
         NotificationManager notificationManager=(NotificationManager)getBaseContext().getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(1,builder.build());

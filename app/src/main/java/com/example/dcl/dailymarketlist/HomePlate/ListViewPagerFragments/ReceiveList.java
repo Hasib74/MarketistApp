@@ -58,7 +58,7 @@ public class ReceiveList extends Fragment {
 
             @Override
             public void onFailure(Call<List<ReceivedData>> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+           //   Toast.makeText(g, "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
