@@ -72,6 +72,18 @@ public class Home extends AppCompatActivity
 
     DailyMarketApi myApi;
 
+    /*
+        Complete
+    #rest Api(Send ,receive)
+    #pust notification(Not completed)
+    -------------
+        UnCompleted
+    #Desing is not completed
+    #Confrom rest
+    #Map
+
+    12/7/2018  vacation of my office .so good bye and stay with smile */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
