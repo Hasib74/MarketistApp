@@ -113,17 +113,6 @@ public class DialogMembersAdepter extends RecyclerView.Adapter<DialogMembersAdep
                                   //  Toast.makeText(context, "Field " + t.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
-                    dailyMarketApi.insertIntoTheReceiverTable(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(1),"88"+memberNumberList.get(i).getNumber(),date + "," + time, item_name, quantity, "0", "0").enqueue(new Callback<check1>() {
-                        @Override
-                        public void onResponse(Call<check1> call, Response<check1> response) {
-                            Toast.makeText(context, "Saveded to the receive table", Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onFailure(Call<check1> call, Throwable t) {
-
-                        }
-                    });
 
                 }
 

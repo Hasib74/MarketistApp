@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@color/colorWhite"
     android:layout_height="match_parent"
     tools:context=".CodeVerification">
 
-    <EditText
-        android:id="@+id/verify_code"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorWhite"
+        android:elevation="10dp">
+
+        <EditText
+            android:id="@+id/verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/colorWhite"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:hint="Verification Code"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText" />
+    </android.support.v7.widget.CardView>
+
+
+<!--    <EditText
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-      />
-
-    <Button
-        android:id="@+id/confrom_code"
-        android:layout_width="wrap_content"
+      />-->
+    <!--<android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="235dp"
-        android:text="Send" />
+        android:padding="5dp"
+        android:background="@color/colorWhite"
+        android:elevation="10dp">-->
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/confrom_code"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite"
+        android:layout_width="178dp"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:text="Confirm" />
 
-</RelativeLayout>
+</LinearLayout>

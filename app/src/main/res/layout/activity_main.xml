@@ -1,76 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageSliderLogoId"
+        android:layout_width="200dp"
+        android:layout_height="158dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="10dp"
+        android:src="@drawable/splash_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:id="@+id/layoutId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageSliderLogoId"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
         <LinearLayout
-            android:layout_centerInParent="true"
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:paddingLeft="5dp"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Name : "
+                android:textAllCaps="false"
+                android:textColor="@color/colorText" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp">
+
+                <EditText
+                    android:id="@+id/register_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/colorWhite"
+                    android:hint="Enter your name"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/colorText" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:hint="Enter Your name"
-                android:id="@+id/register_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:hint="Enter your password"
-                android:id="@+id/register_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <LinearLayout
-                android:id="@+id/number_section"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:orientation="horizontal"
-                android:weightSum="3">
 
-                <TextView
-                    android:id="@+id/tv_show"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Hello World!" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:text="Phone Number : "
+                android:textAllCaps="false"
+                android:textColor="@color/colorText" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:elevation="5dp">
 
                 <EditText
                     android:id="@+id/set_phone_number"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2" />
+                    android:backgroundTint="@color/colorWhite"
+                    android:hint="Enter the number"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/colorText" />
+            </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Password : "
+                android:paddingLeft="5dp"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorText" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp">
+
+                <EditText
+                    android:id="@+id/register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:hint="Enter your password"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/colorText" />
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+           android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="ConfirmPassword : "
+                android:textSize="12sp"
+                android:paddingLeft="5dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorText" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp">
+
+                <EditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:hint="Confirm Password"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/colorText" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/tv_show"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:textSize="12sp"
+                android:text="Phone number : "
+                android:textColor="@color/colorText" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:paddingBottom="5dp"
+                android:elevation="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/colorText" />
+            </android.support.v7.widget.CardView>
+
         </LinearLayout>
 
 
 
 
 
-        <Button
-            android:id="@+id/registation_btn"
-            android:text="Registration"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="191dp" />
-
-
-
-    </RelativeLayout>
 
 
 
 
+            <!--     <RelativeLayout
 
-</LinearLayout>
+                android:layout_width="match_parent"
+                android:layout_height="228dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:id="@+id/number_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+
+            </RelativeLayout>
+-->
+        </LinearLayout>
+
+
+    <Button
+        android:id="@+id/registation_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorGreen"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="10dp"
+        android:text="Registration"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>

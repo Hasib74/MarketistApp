@@ -30,14 +30,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogInOrRegister">
+        <activity
+            android:name=".LogInOrRegister"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".CodeVerification" />
+        <activity android:name=".CodeVerification" android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
@@ -48,7 +50,7 @@
         <activity android:name=".ShowMenuList" />
         <activity android:name=".ShowCompletedListMenus" />
         <activity android:name=".Members" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ShowSendBazarList" />
 
         <service android:name=".Service.FirebaseMessageing">
@@ -69,7 +71,19 @@
         <activity
             android:name=".Map.NearByMarket"
             android:label="@string/title_activity_near_by_market" />
-        <activity android:name=".HomePlate.MainPage" />
+        <activity android:name=".HomePlate.MainPage" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

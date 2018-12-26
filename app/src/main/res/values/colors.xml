@@ -3,9 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorGreen">#17A857</color>
+    <color name="colorRate">#B1FFA5</color>
+    <color name="colorWhite">#fffeff</color>
 
+    <color name="colorText">#17A857</color>
     <color name="tab_disable">#979797</color>
     <color name="tab_enable">#FFFFFF</color>
     <color name="tab_checked">#fffeff</color>
     <color name="tab_unchecked">#f5efef</color>
+
+
 </resources>

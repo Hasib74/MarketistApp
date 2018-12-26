@@ -46,4 +46,11 @@
             android:layout_height="match_parent"></FrameLayout>
 
     </RelativeLayout>
+
+
+    <include layout="@layout/bottom_design"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        />
 </RelativeLayout>

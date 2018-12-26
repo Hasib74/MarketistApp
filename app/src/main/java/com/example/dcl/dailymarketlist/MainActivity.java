@@ -20,10 +20,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    String contryId;
-    String contryDialCode;
-    EditText name,password;
-    FirebaseAuth firebaseAuth;
+    private String contryId;
+    private String contryDialCode;
+    private EditText name,password;
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -81,9 +81,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onStart() {
+    protected void onStart()
+    {
         super.onStart();
-        if (firebaseAuth.getCurrentUser() != null) {
+        if (firebaseAuth.getCurrentUser() != null)
+        {
 
             Common.phone_number=firebaseAuth.getCurrentUser().getPhoneNumber();
 
